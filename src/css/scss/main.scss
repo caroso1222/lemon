@@ -1,0 +1,89 @@
+@import "colors";
+//@import "bourbon/bourbon";
+
+html,body{
+	height: 100%;
+}
+body{
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
+	background-color: #fafafa;
+	color: #333333;
+	overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6{
+	//font-family: "Avenir",Arial,sans-serif;
+}
+
+.main{
+	height: 100%;
+	.main-row{
+		height: 100%;
+	}
+}
+
+.requirement-card{
+	position: relative;
+	margin-bottom: 1px;
+	.title{
+		font-weight: 500;
+	}
+	.switch{
+		float: right;
+		position: relative;
+		top: -2px;
+	}
+	.card-panel{
+		margin-bottom: 4px;
+		padding: 0;
+		border-radius: 5px;
+	}
+	.collection{
+		border-radius: 5px;
+		border: none;
+	}
+	.selected{
+
+	}
+
+	.collection-item{
+		transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+		&.selected{
+			background-color: #F5F5F9;
+		}
+	}
+}
+
+.main-left, .main-right{
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.main-row{
+	&.row{
+		margin-bottom: 0px;
+	}
+	.main-right{
+		background-color: white;
+		border-left: 1px solid #E8E8E8;
+		padding: 4rem 2rem;
+	}
+
+	.main-left{
+		padding-top: 5rem;
+	}
+}
+
+tr.total{
+	font-weight: 500;
+	border-top: 1px solid #d0d0d0;
+}
+
+table.highlight>tbody>tr:hover {
+    background-color: #F9F9F9;
+}
+
+
