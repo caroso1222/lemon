@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../partials/admin-head %>
+</head>
+<body ng-app="app">
+	<div class="main" ng-controller="mainController">
+		<div class="row">
+			<a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
+			<div id="modal1" class="modal">
+				<form ng-submit="addRequeriment()">
+					<div class="modal-content">
+						<div class="row">
+							<div class="col s12">
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="description" type="text" length="40" ng-model = "requirement.description">
+										<label for="description">Descripción de requerimiento</label>
+									</div>
+								</div>
+							</div>
+							<div class="col s3">
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="design_hours" type="number" ng-model = "requirement.design_hours">
+										<label for="design_hours">Horas Diseño</label>
+									</div>
+								</div>
+							</div>
+							<div class="col s3">
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="frontend_hours" type="number" ng-model = "requirement.frontend_hours">
+										<label for="frontend_hours">Horas Frontend</label>
+									</div>
+								</div>
+							</div>
+							<div class="col s3">
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="backend_hours" type="number" ng-model = "requirement.backend_hours">
+										<label for="backend_hours">Horas Backend</label>
+									</div>
+								</div>
+							</div>
+							<div class="col s3">
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="integration_hours" type="number" ng-model = "requirement.integration_hours">
+										<label for="integration_hours">Horas Integración</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="modal-action modal-close waves-effect waves-green btn-flat" type="submit">Enviar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<% include ../partials/admin-scripts %> 
+</body>
+</html>
