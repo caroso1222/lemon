@@ -26,3 +26,34 @@
 .admin #modalResource .row {
   margin-bottom: 0px;
 }
+.admin .constant-input {
+  width: 65%;
+}
+.admin .input-wrapper {
+  position: relative;
+  display: inline;
+}
+.admin .input-wrapper span {
+  position: absolute;
+  top: -1px;
+  left: 0px;
+}
+.admin #constants table {
+  position: relative;
+}
+.admin #constants td {
+  padding: 8px 5px;
+}
+.admin #constants .thead-line {
+  display: block;
+  width: 100%;
+  background-color: #dddddd;
+}
+.admin #constants .progress, .admin #constants .thead-line {
+  position: absolute;
+  top: 72px;
+  left: 0px;
+  z-index: 20;
+  height: 2px;
+  margin: 0px;
+}

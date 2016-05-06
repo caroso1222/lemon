@@ -32,7 +32,6 @@ var routes = function(app){
 	});
 
 	app.post('/resource',function(req,res){
-		console.log(req.body);
 		var newResource = new Resource(req.body);
 		newResource.wage = 0;
 		newResource.save(function(err,obj){
@@ -46,6 +45,22 @@ var routes = function(app){
 			res.send(elems);
 		});
 	});
+
+	app.put('/resource/:id',function(req,res){
+		var id = req.params.id;
+		Resource.findOneAndUpdate({'_id':id},req.body, function(err,doc){
+			if(err) return res.send(500, {error:err});
+			return res.send("sucessfully saved");
+		});
+	});
 }
 
 module.exports = routes;
+
+
+
+
+
+
+
+

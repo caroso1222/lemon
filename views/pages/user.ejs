@@ -74,12 +74,13 @@
 										<input ng-value={{resource.time_percentage}} class="center-align percentage-input" type="number" ng-model="resource.time_percentage"><span>%</span></input>
 									</div>
 									</td>
-									<td class="center-align">{{resource.time_percentage*totalHoursVal/100}}</td>
-									<td class="center-align">0</td>
+									<td class="center-align">{{calculateResourceHours(resource)}}</td>
+									<td class="center-align">{{calculateResourceCosts(resource) | currency:"$":0}}</td>
 								</tr>
 								<tr class="total">
-									<td>Total</td><td></td><td></td>
-									<td class="center-align">{{totalHours()}}</td>
+									<td>Total</td><td></td>
+									<td class="center-align">{{totalHoursResource()}}</td>
+									<td class="center-align">{{totalCostsResource() | currency:"$":0}}</td>
 								</tr>
 							</tbody>						
 						</table>

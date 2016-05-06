@@ -32,4 +32,47 @@
 			margin-bottom: 0px;
 		}
 	}
+
+	.constant-input{
+		width: 65%;
+	}
+
+	.input-wrapper{
+		position: relative;
+		display: inline;
+		span{
+			position: absolute;
+			top: -1px;
+			left: 0px;
+		}
+	}
+
+	#constants{
+		table{
+			position: relative;
+		}
+		td{
+			padding: 8px 5px;
+		}
+
+
+		.thead-line{
+			display: block;
+			width: 100%;
+			background-color: #dddddd;
+		}
+
+		.progress,.thead-line{
+			position: absolute; 
+			top: 72px;
+			left: 0px;
+			z-index: 20;
+			height: 2px;
+			margin: 0px;
+		}
+	}
 }
+
+
+
+

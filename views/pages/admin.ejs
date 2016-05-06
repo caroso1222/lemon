@@ -10,8 +10,8 @@
 				<div class="col s8 offset-s2">
 					<ul class="tabs">
 						<li class="tab col s3"><a href="#reqs">Requerimientos</a></li>
-						<li class="tab col s3"><a class="active" href="#resources">Recursos</a></li>
-						<li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
+						<li class="tab col s3"><a href="#resources">Recursos</a></li>
+						<li class="tab col s3"><a class="active" href="#constants">Constantes</a></li>
 						<li class="tab col s3"><a href="#test4">Test 4</a></li>
 					</ul>
 				</div>
@@ -59,7 +59,33 @@
 						<a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modalResource"><i class="material-icons">add</i></a>
 					</div>
 				</div>
-				<div id="test3" class="col s12">Test 3</div>
+				<div id="constants" class="col s12">
+					<div class="col s4 offset-s4 table-wrapper z-depth-1">
+						<table class="highlight responsive-table">
+							<div class="progress red lighten-4" ng-show="isSaving">
+								<div class="indeterminate red"></div>
+							</div>
+							<div class="thead-line" ng-hide="isSaving"></div>
+							<thead>
+								<tr>
+									<th data-field="description">Constante</th>
+									<th data-field="design_hours" class="center-align">Valor</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="resource in resources">
+									<td>Salario {{resource.name}}</td>
+									<td class="center-align">
+										<div class="input-wrapper">
+											<input ng-value={{resource.wage}} class="center-align constant-input" type="text" pattern="[0-9]+([\.,][0-9]+)*" ng-model="resource.wage" ng-blur="saveSalary(resource)" ng-change = "setShouldSave()" format></input><span>$</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modalResource"><i class="material-icons">add</i></a>
+					</div>
+				</div>
 				<div id="test4" class="col s12">Test 4</div>
 			</div>
 		</div>
