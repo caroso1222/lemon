@@ -9,10 +9,9 @@
 			<div class="row tabs-wrapper">
 				<div class="col s8 offset-s2">
 					<ul class="tabs">
-						<li class="tab col s3"><a href="#reqs">Requerimientos</a></li>
+						<li class="tab col s3"><a class="active" href="#reqs">Requerimientos</a></li>
 						<li class="tab col s3"><a href="#resources">Recursos</a></li>
-						<li class="tab col s3"><a class="active" href="#constants">Constantes</a></li>
-						<li class="tab col s3"><a href="#test4">Test 4</a></li>
+						<li class="tab col s3"><a href="#constants">Constantes</a></li>
 					</ul>
 				</div>
 				<div id="reqs" class="col s12">
@@ -81,12 +80,18 @@
 										</div>
 									</td>
 								</tr>
+								<tr ng-repeat="constant in constants">
+									<td>{{constant.name}}</td>
+									<td class="center-align">
+										<div class="input-wrapper">
+											<input ng-value={{constant.value}} class="center-align constant-input" type="text" pattern="[0-9]+([\.,][0-9]+)*" ng-model="constant.value" ng-blur="saveConstant(constant)" ng-change = "setShouldSave()" format></input><span>$</span>
+										</div></td>
+								</tr>
 							</tbody>
 						</table>
-						<a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modalResource"><i class="material-icons">add</i></a>
+						<a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#constantResource"><i class="material-icons">add</i></a>
 					</div>
 				</div>
-				<div id="test4" class="col s12">Test 4</div>
 			</div>
 		</div>
 		<div id="modal1" class="modal">
@@ -167,6 +172,34 @@
 				</div>
 			</form>
 		</div>
+		<div id="constantResource" class="modal">
+			<form ng-submit="addConstant()">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col s7">
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="name" type="text" length="40" ng-model = "constant.name">
+									<label for="name">Nombre de constante</label>
+								</div>
+							</div>
+						</div>
+						<div class="col s5">
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="time_percentage" type="number" ng-model = "constant.value">
+									<label for="time_percentage">Valor</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="modal-action modal-close waves-effect waves-green btn-flat" type="submit">Enviar</button>
+				</div>
+			</form>
+		</div>
+
 	</div>
 	<% include ../partials/admin-scripts %> 
 </body>

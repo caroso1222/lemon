@@ -27,13 +27,15 @@
 				</div>
 			</div>	
 			<div class="col s6 main-right white">
+			<div class="total-box red lighten-1">
+				<p class="lbl">Valor total</p>
+				<p class="value">{{totalReqCostVal+totalResourceCostVal | currency:"$":0}}</p>
+			</div>
 				<div class="row">
 					<div class="col s12">
 						<ul class="tabs">
-							<li class="tab col s3"><a href="#reqs">Requerimientos</a></li>
-							<li class="tab col s3"><a class="active" href="#resources">Dirección</a></li>
-							<li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
-							<li class="tab col s3"><a href="#test4">Test 4</a></li>
+							<li class="tab col s3"><a class="active" href="#reqs">Requerimientos</a></li>
+							<li class="tab col s3"><a href="#resources">Dirección</a></li>
 						</ul>
 					</div>
 					<div id="reqs" class="col s12">
@@ -42,16 +44,19 @@
 								<tr>
 									<th data-field="id">Descripción</th>
 									<th data-field="name" class="center-align">Horas</th>
+									<th data-field="name" class="center-align">Costo</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr ng-repeat="item in requirements | filter:{selected:true}">
 									<td>{{item.description}}</td>
-									<td class="center-align">{{item.design_hours + item.frontend_hours + item.backend_hours + item.integration_hours}}</td>
+									<td class="center-align">{{calculateReqHours(item)}}</td>
+									<td class="center-align">{{calculateReqCost(item) | currency:"$":0}}</td>
 								</tr>
 								<tr class="total">
 									<td>Total</td>
-									<td class="center-align">{{totalHours()}}</td>
+									<td class="center-align">{{totalReqHours()}}</td>
+									<td class="center-align">{{totalReqCost() | currency:"$":0}}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -85,8 +90,6 @@
 							</tbody>						
 						</table>
 					</div>
-					<div id="test3" class="col s12">Test 3</div>
-					<div id="test4" class="col s12">Test 4</div>
 				</div>
 			</div>
 		</div>

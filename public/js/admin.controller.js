@@ -47,6 +47,17 @@ app.controller('mainController',function($scope,$http, $timeout){
 		}
 	}
 
+	$scope.saveConstant = function(elem){
+		if(shouldSave){
+			shouldSave = false;
+			$scope.isSaving = true;
+			$http.put('/constant/'+elem._id,elem);
+			$timeout(function() {
+				$scope.isSaving = false;
+			}, 2000);
+		}
+	}
+
 	$scope.addResource = function(){
 		$http.post('/resource',$scope.resource);
 		$scope.resource = {};
@@ -56,6 +67,11 @@ app.controller('mainController',function($scope,$http, $timeout){
 		$http.post('/requirement',$scope.requirement);
 		$scope.requirement = {};
 		updateRequirements();
+	}
+	$scope.addConstant = function(){
+		$http.post('/constant',$scope.constant);
+		$scope.constant = {};
+		updateConstants();
 	}
 	function updateRequirements(){
 		$http.get('/requirements').then(function(res){
@@ -71,10 +87,25 @@ app.controller('mainController',function($scope,$http, $timeout){
 			console.log(err);
 		});
 	}
+	function updateConstants(){
+		$http.get('/constants').then(function(res){
+			$scope.constants = res.data;
+			console.log($scope.constants);
+		},function(err){
+			console.log(err);
+		});
+	}
 
 	$scope.setShouldSave = function(){
 		shouldSave = true;
 	}
 	updateRequirements();
 	updateResources();
+	updateConstants();
 });
+
+
+
+
+
+
