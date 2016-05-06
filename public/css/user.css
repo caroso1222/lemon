@@ -66,7 +66,7 @@ body {
 .main-row .main-right {
   background-color: white;
   border-left: 1px solid #E8E8E8;
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
 }
 
 .main-row .main-left {
@@ -80,4 +80,23 @@ tr.total {
 
 table.highlight > tbody > tr:hover {
   background-color: #F9F9F9;
+}
+
+.user .resources td {
+  padding: 10px 5px;
+}
+.user .tabs {
+  margin-bottom: 35px;
+}
+.user .percentage-wrapper {
+  position: relative;
+  display: inline;
+}
+.user .percentage-input {
+  width: 40%;
+}
+.user .percentage-input + span {
+  position: absolute;
+  right: 0;
+  top: -1px;
 }

@@ -1,0 +1,35 @@
+.admin{
+	.table-wrapper{
+		background-color: white;
+		padding: 20px 20px;
+		margin-top: 20px;
+		padding-bottom: 40px;
+		position: relative;
+	}
+
+	.modal-trigger{
+		position: absolute;
+		bottom: -28px;
+		right: 20px;
+	}
+
+	tr{
+		border-bottom: 1px solid #dddddd;
+	}
+
+	.tabs-wrapper{
+		margin-top: 45px;
+	}
+
+	.tabs{
+		background: transparent;
+		margin-bottom: 20px;
+	}
+
+	#modalResource{
+		width: 45%;
+		.row{
+			margin-bottom: 0px;
+		}
+	}
+}

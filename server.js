@@ -10,8 +10,8 @@ var initApp = function(){
 	app.use(bodyParser.json());
 	app.set('view engine', 'ejs');
 	app.listen(3000);
-	require('./app/routes/admin')(app);
-	require('./app/routes/user')(app);
+	require('./app/routes/admin.routes')(app);
+	require('./app/routes/user.routes')(app);
 	console.log("server running on port 3000");
 }
 

@@ -18,6 +18,8 @@ body {
   height: 100%;
 }
 
+
+
 .requirement-card {
   position: relative;
   margin-bottom: 1px;
@@ -58,7 +60,7 @@ body {
 .main-row .main-right {
   background-color: white;
   border-left: 1px solid #E8E8E8;
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
 }
 .main-row .main-left {
   padding-top: 5rem;
@@ -72,3 +74,30 @@ tr.total {
 table.highlight > tbody > tr:hover {
   background-color: #F9F9F9;
 }
+
+.user{
+  .resources{
+    td{
+      padding: 10px 5px;
+    }
+  }
+  .tabs{
+    margin-bottom: 35px;
+  }
+  .percentage-wrapper{
+    position: relative;
+    display: inline;
+  }
+  .percentage-input{
+    width: 40%;
+    + span{
+      position: absolute;
+      right: 0;
+      top: -1px;
+    }
+  }
+}
+
+
+
+
